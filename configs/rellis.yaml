@@ -1,0 +1,31 @@
+exp_name: rellis_direction_transformer
+seed: 42
+
+data:
+  # CHANGE THESE PATHS
+  root_pose: "D:/RELLIS3D/Rellis_3D_lidar_poses/Rellis-3D"
+  root_bin:  "D:/RELLIS3D/Rellis_3D_vel_cloud_node_kitti_bin/Rellis-3D"
+
+  # Sequences to use (integers). Default: 0..4
+  sequences: [0, 1, 2, 3, 4]
+
+  # Split output (and also training reads this)
+  split_json: "splits/rellis_seed42.json"
+
+  # Validation ratio over all adjacent pairs (approx)
+  val_ratio: 0.2
+
+dataset:
+  num_points: 8192
+
+model:
+  num_tokens: 256
+  d_model: 256
+  nhead: 8
+  depth: 4
+
+train:
+  batch_size: 8
+  num_workers: 4
+  lr: 0.0003
+  epochs: 30
