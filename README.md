@@ -1,4 +1,3 @@
-
 # RELLIS-3D Direction Transformer (LiDAR .bin -> driving direction)
 
 This repo trains a Transformer to predict **driving direction** from consecutive LiDAR point clouds.
@@ -65,3 +64,16 @@ For each pair (t, t+1):
 ## Notes
 - `calib.txt` in your uploaded example is identity, so pose and velodyne are already aligned,
   but this repo still applies `Tr` generically (works if other sequences are not identity).
+
+## Evaluation outputs
+Training prints per-epoch:
+- train loss
+- validation cosine loss
+- mean/median angular error (degrees)
+- accuracy within angular thresholds (acc@10°, acc@20°, acc@30°)
+- epoch time, elapsed time, and estimated remaining time
+
+Files saved under `runs/<exp_name>/`:
+- `metrics.jsonl`: one JSON line per epoch (train loss, validation metrics, timing)
+- `summary.json` and `summary.txt`: final experiment summary
+- `best.pt` and `last.pt`: checkpoints
