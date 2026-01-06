@@ -1,4 +1,4 @@
-# Direction_Decision_Transfomer[README.md](https://github.com/user-attachments/files/24461211/README.md)
+
 # RELLIS-3D Direction Transformer (LiDAR .bin -> driving direction)
 
 This repo trains a Transformer to predict **driving direction** from consecutive LiDAR point clouds.
